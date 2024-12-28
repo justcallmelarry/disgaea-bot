@@ -6,7 +6,7 @@ Use [uv](https://docs.astral.sh/uv/) to run. This will automatically handle that
 uv run main ./path-to-instruction-file.txt --iterations 100
 ```
 
-Once you have run the script, make sure that you are on the correct stage in stage select, then press F12 to start.
+Once you have run the script, make sure that you are on the correct stage in stage select, then press F8 to start.
 
 ## The Instruction File Format
 

@@ -27,10 +27,10 @@ class Instruction:
 
 
 def on_press(key):
-    if str(key) == "Key.f8":
+    if str(key) == "Key.f":
         raise InterruptedError
 
-    if str(key) != "Key.f12":
+    if str(key) != "Key.f8":
         return
 
     raise StartIteration
