@@ -1,9 +1,20 @@
-## The instruction file format
+## Installation
+
+Use [uv](https://docs.astral.sh/uv/) to run. This will automatically handle that the correct dependencies, and the correct Python version is used.
+
+```
+uv run main ./path-to-instruction-file.txt --iterations 100
+```
+
+Once you have run the script, make sure that you are on the correct stage in stage select, then press F12 to start.
+
+## The Instruction File Format
+
 The instruction file consists of an action, a button, and an optional wait time.
 
 The instructions are as follows:
 
-| symbol | action  |
+| Symbol | Action  |
 | ------ | ------- |
 | #      | press   |
 | >      | keyDown |
@@ -12,31 +23,6 @@ The instructions are as follows:
 If this is followed by a float, the script will sleep for the time specified after running the command.
 
 Additionally you can add comments to the file (a line that starts with // is a comment).
-
-
-## Useful combinations
-
-### Select first char and choose Special
-```
-// start and choose first char
-#k3.5
-#k
-#k
-// then choose special
-#s
-#s
-#k0.2
-```
-
-### Execute, wait for the attack animation, then click on bonus bar page and go back to stage select
-```
-// execute and back to stage select
-#i
-#k3.5
-#k
-#k1.2
-```
-
 
 ## Examples
 
