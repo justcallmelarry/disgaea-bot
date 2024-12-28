@@ -36,3 +36,96 @@ Additionally you can add comments to the file (a line that starts with // is a c
 #k
 #k1.2
 ```
+
+
+## Examples
+
+### CoO3 With Winged Slayer
+
+```
+// start and choose first char
+#k3.5
+#k
+#k
+// then choose special
+#s
+#s
+#k0.2
+// then choose winged slayer
+#s
+#s
+#s
+#k
+// face the correct way, then move char in winged slayer select mode
+#d
+>i
+#d
+<i
+#k
+// execute and back to stage select
+#i
+#k3.5
+#k
+#k1.2
+```
+
+### Demonhall Mirror With Winged Slayer
+
+```
+// start and choose first char
+#k3.5
+#k
+#k
+// then choose special
+#s
+#s
+#k0.2
+// then choose winged slayer
+#s
+#s
+#s
+#k
+// face the correct way, then move char in winged slayer select mode
+#w
+>i
+>w0.8
+<w
+<i
+#k
+// execute and back to stage select
+#i
+#k3.5
+#k
+#k1.2
+```
+
+### Tera Star At CoO3
+
+```
+// start and choose first char
+#k3.5
+#k
+#k
+// then choose special
+#s
+#s
+#k0.2
+// choose tera star
+#e
+#e
+#k
+// choose 3x3
+#d
+#d
+#k
+// select the enemies
+#d
+#d
+#d
+#k
+// execute and back to stage select
+#i
+#k3.5
+#k
+#k1.2
+```
