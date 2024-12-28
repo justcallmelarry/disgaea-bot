@@ -22,7 +22,7 @@ The instructions are as follows:
 
 If this is followed by a float, the script will sleep for the time specified after running the command.
 
-Additionally you can add comments to the file (a line that starts with // is a comment).
+Additionally you can add comments to the file (a line that starts with `//` is a comment).
 
 ## Examples
 
