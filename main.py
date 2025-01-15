@@ -1,15 +1,12 @@
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing_extensions import Annotated
 
 import pydirectinput
 import typer
+from pynput._util import AbstractListener
 from pynput.keyboard import Listener
-
-
-class StartIteration(Exception):
-    pass
+from typing_extensions import Annotated
 
 
 @dataclass
@@ -27,13 +24,13 @@ class Instruction:
 
 
 def on_press(key):
-    if str(key) == "Key.f":
+    if str(key) == "Key.f7":
         raise InterruptedError
 
     if str(key) != "Key.f8":
         return
 
-    raise StartIteration
+    raise AbstractListener.StopException()
 
 
 def parse_instructions(file_contents: str) -> list[Instruction]:
@@ -70,10 +67,10 @@ def run_instructions(instructions: list[Instruction]) -> None:
 
 
 def main(
-    filename: Path,
+    filepath: Path,
     iterations: Annotated[int, typer.Option("--iterations", "-i")] = 50,
 ) -> None:
-    with open(filename) as f:
+    with open(filepath) as f:
         file_contents = f.read()
 
     instructions = parse_instructions(file_contents)
@@ -81,13 +78,14 @@ def main(
     try:
         with Listener(on_press=on_press, on_release=None) as listener:
             listener.join()
-    except StartIteration:
-        keep_going = True
     except InterruptedError:
-        pass
+        return
+
+    keep_going = True
 
     i = 0
     current_time = time.time()
+    print(f"Starting {filepath.name} - {iterations} iterations")
     while keep_going:
         run_instructions(instructions)
         i += 1
